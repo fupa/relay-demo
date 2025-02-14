@@ -1,0 +1,30 @@
+{
+  "name": "fupa/relay-demo",
+  "description": "minimum project to test relay usage",
+  "type": "project",
+  "require": {
+    "php": ">=8.3",
+    "ext-relay": "*"
+  },
+  "require-dev": {
+    "ext-xdebug": "*"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "autoload": {
+    "psr-4": {
+    },
+    "files": [
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+    }
+  },
+  "prefer-stable": true,
+  "scripts": {
+  }
+}

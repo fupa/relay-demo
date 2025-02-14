@@ -1,0 +1,26 @@
+services:
+  # nginx webserver
+  relay-demo-webserver:
+    container_name: relay-demo-webserver
+    build:
+      context: ./resources/webserver/
+    ports:
+      - "8080:8080"
+    depends_on:
+      - relay-demo-php
+
+  # PHP application
+  relay-demo-php:
+    container_name: relay-demo-php
+    build:
+      context: ./resources/php/
+    volumes:
+      - ./app:/var/www/html
+    post_start:
+      - command: ["composer", "install"]
+
+  # Valkey based cache
+  relay-demo-cache:
+    container_name: relay-demo-cache
+    build:
+      context: ./resources/cache/
